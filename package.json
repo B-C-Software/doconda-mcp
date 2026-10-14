@@ -1,0 +1,87 @@
+{
+  "name": "@doconda/mcp",
+  "mcpName": "com.doconda/mcp",
+  "version": "0.3.1",
+  "description": "Doconda MCP server: give your AI agent tools to create, review and edit Word, PowerPoint, Excel and PDF documents. Remote (Streamable HTTP) or local (stdio).",
+  "keywords": [
+    "docx",
+    "pptx",
+    "xlsx",
+    "pdf",
+    "word",
+    "powerpoint",
+    "excel",
+    "document-generation",
+    "ai-agents",
+    "llm",
+    "tools",
+    "ai-sdk",
+    "openai",
+    "anthropic",
+    "bedrock",
+    "vertex-ai",
+    "mcp",
+    "model-context-protocol",
+    "azure-openai",
+    "gemini",
+    "openai-agents",
+    "remote-mcp"
+  ],
+  "homepage": "https://doconda.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-C-Software/doconda-mcp.git"
+  },
+  "type": "module",
+  "bin": {
+    "doconda-mcp": "./src/cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./http": "./src/http.ts"
+  },
+  "scripts": {
+    "test": "node --test 'src/**/*.test.ts'",
+    "typecheck": "tsc --noEmit",
+    "lint": "prettier --check src tsdown.config.ts",
+    "build": "tsdown",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@doconda/sdk": "^0.4.0",
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "prettier": "^3.9.6",
+    "tsdown": "^0.23.0",
+    "typescript": "~6.0.3"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "./http": {
+        "types": "./dist/http.d.mts",
+        "default": "./dist/http.mjs"
+      }
+    },
+    "bin": {
+      "doconda-mcp": "./dist/cli.mjs"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/B-C-Software/doconda-mcp/issues"
+  }
+}
