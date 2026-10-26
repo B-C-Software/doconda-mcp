@@ -1,0 +1,45 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.doconda/mcp",
+  "title": "Doconda",
+  "description": "Create, review and edit Word, PowerPoint, Excel and PDF documents from any AI agent.",
+  "websiteUrl": "https://doconda.com",
+  "version": "0.3.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@doconda/mcp",
+      "version": "0.3.2",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "DOCONDA_API_KEY",
+          "description": "Doconda API key (ak_eu_…), from https://doconda.com",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.eu.doconda.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer followed by your Doconda API key: Bearer ak_eu_…",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/B-C-Software/doconda-mcp",
+    "source": "github"
+  }
+}
