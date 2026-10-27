@@ -28,7 +28,7 @@ export const TOOL_ANNOTATIONS: Record<string, { title: string; annotations: Tool
 export function createServer(doconda: Doconda, options: ToolOptions = {}): Server {
   const tools = doconda.tools(options)
   const server = new Server(
-    { name: "doconda", version: "0.3.2" },
+    { name: "doconda", version: "0.3.3" },
     {
       capabilities: { tools: {} },
       instructions:
