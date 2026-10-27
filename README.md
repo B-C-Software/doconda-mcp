@@ -7,8 +7,10 @@ Excel and PDF** documents. Editable files, reviewed before delivery, with a PDF 
 
 ## Remote server (for your app's agent)
 
-No install: `https://api.eu.doconda.com/mcp` (Streamable HTTP, header `Authorization: Bearer ak_eu_…`). Any agent
-framework or model API that speaks MCP can use it. With the OpenAI Responses API:
+No install: `https://api.eu.doconda.com/mcp` (Streamable HTTP). Clients with MCP authorization (Claude connectors,
+Claude Code, Cursor, MCP Inspector) only need the URL: they open Doconda in the browser to sign in and approve access
+to one project, read-only if you prefer. Agent frameworks and model APIs send an API key instead, as
+`Authorization: Bearer ak_eu_…`. With the OpenAI Responses API:
 
 ```python
 from openai import OpenAI

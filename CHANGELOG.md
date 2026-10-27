@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 (2026-10-27)
+
+- The remote server (`https://api.eu.doconda.com/mcp`) accepts OAuth sign-in: clients with MCP authorization add the URL, and the user signs in to Doconda and approves access to one project (read-only or read and write). API keys keep working as before.
+- Without a token, the remote server answers every request with `401` and `WWW-Authenticate` pointing at its OAuth metadata; it no longer answers `initialize` and `tools/list` anonymously. Its tools are listed in `/.well-known/mcp/server-card.json`.
+- New exports `SERVER_INFO` and `listTools(doconda)`; the server info now has a `title`.
+- `upload_file` returns `file_id` and `filename`; it no longer returns `pages`, which was always `null` (SDK 0.6.1).
+- A `url` that `upload_file` can't download, including a private address on the hosted server, is `file_unreachable` on `/url` instead of `failed`, so an agent can tell a bad URL from a passing failure.
+- `list_documents` leaves out `type` when a document has none (an edit or a review), as it already did with `name`.
+
 ## 0.3.3 (2026-10-26)
 
 - `create_document` and `edit_document` take `quality` (`auto`, `fast`, `standard` or `best`) and `max_quality` (the cap for `auto`). Without them nothing changes (`auto`). With a low balance an agent can pick `fast` or cap the level: the highest level's price is held while the document is made.

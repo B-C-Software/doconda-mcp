@@ -23,27 +23,28 @@ export const TOOL_ANNOTATIONS: Record<string, { title: string; annotations: Tool
   read_artifact_data: { title: "Read artifact data", annotations: READ },
 }
 
+export const SERVER_INFO = { name: "doconda", title: "Doconda", version: "0.4.0" }
+
 // ===== Public API =====
+
+export function listTools(doconda: Doconda, options: ToolOptions = {}) {
+  return doconda.tools(options).map(({ name, description, inputSchema }) => ({
+    name,
+    description,
+    inputSchema,
+    ...TOOL_ANNOTATIONS[name],
+  }))
+}
 
 export function createServer(doconda: Doconda, options: ToolOptions = {}): Server {
   const tools = doconda.tools(options)
-  const server = new Server(
-    { name: "doconda", version: "0.3.3" },
-    {
-      capabilities: { tools: {} },
-      instructions:
-        "Doconda creates, reviews and edits documents (Word, PDF, PowerPoint, Excel) and artifacts (web pages with shared data). Share the links it returns with the user; they expire, so call get_document for fresh ones.",
-    },
-  )
+  const server = new Server(SERVER_INFO, {
+    capabilities: { tools: {} },
+    instructions:
+      "Doconda creates, reviews and edits documents (Word, PDF, PowerPoint, Excel) and artifacts (web pages with shared data). Share the links it returns with the user; they expire, so call get_document for fresh ones.",
+  })
 
-  server.setRequestHandler(ListToolsRequestSchema, async () => ({
-    tools: tools.map(({ name, description, inputSchema }) => ({
-      name,
-      description,
-      inputSchema,
-      ...TOOL_ANNOTATIONS[name],
-    })),
-  }))
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: listTools(doconda, options) }))
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const tool = tools.find((t) => t.name === request.params.name)

@@ -4,12 +4,12 @@
   "title": "Doconda",
   "description": "Create, review and edit Word, PowerPoint, Excel and PDF documents from any AI agent.",
   "websiteUrl": "https://doconda.com",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@doconda/mcp",
-      "version": "0.3.3",
+      "version": "0.4.0",
       "transport": {
         "type": "stdio"
       },
@@ -31,8 +31,8 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer followed by your Doconda API key: Bearer ak_eu_…",
-          "isRequired": true,
+          "description": "Optional: Bearer followed by your Doconda API key (Bearer ak_eu_…). Without it, the client signs in with your Doconda account (OAuth).",
+          "isRequired": false,
           "isSecret": true
         }
       ]
