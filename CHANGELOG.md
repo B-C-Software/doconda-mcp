@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 (2026-10-27)
+
+- The `get_report` tool lists each automatic fix it tried in `fixes` (what it was, `applied` or `rejected`, and why it was rejected) instead of only counting them. Its description says what it returns, when to call it, and that it answers `report_not_ready` until the document finishes and `content_deleted` once its retention ends (SDK 0.6.2).
+
 ## 0.4.0 (2026-10-27)
 
 - The remote server (`https://api.eu.doconda.com/mcp`) accepts OAuth sign-in: clients with MCP authorization add the URL, and the user signs in to Doconda and approves access to one project (read-only or read and write). API keys keep working as before.

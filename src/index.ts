@@ -23,7 +23,7 @@ export const TOOL_ANNOTATIONS: Record<string, { title: string; annotations: Tool
   read_artifact_data: { title: "Read artifact data", annotations: READ },
 }
 
-export const SERVER_INFO = { name: "doconda", title: "Doconda", version: "0.4.0" }
+export const SERVER_INFO = { name: "doconda", title: "Doconda", version: "0.4.1" }
 
 // ===== Public API =====
 
