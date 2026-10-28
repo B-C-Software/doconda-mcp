@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.5 (2026-10-28)
+
+- No code changes: the first version published through npm trusted publishing (GitHub Actions OIDC) instead of a token (SDK 0.7.2).
+
 ## 0.4.4 (2026-10-28)
 
 - The `edit_document` and `review_document` descriptions say what the results contain; the edit description no longer promises a link to the report (SDK 0.7.1).
