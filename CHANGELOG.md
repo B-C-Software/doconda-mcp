@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.2 (2026-10-28)
+
+- After an edit, `get_report` returns `changes` (each passage added, changed or removed, with the text before and after) instead of `edits` (SDK 0.6.3).
+- The `quality` description says `fast` now takes about a minute, takes any style and can't copy a file's design (SDK 0.6.3).
+
 ## 0.4.1 (2026-10-27)
 
 - The `get_report` tool lists each automatic fix it tried in `fixes` (what it was, `applied` or `rejected`, and why it was rejected) instead of only counting them. Its description says what it returns, when to call it, and that it answers `report_not_ready` until the document finishes and `content_deleted` once its retention ends (SDK 0.6.2).
