@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3 (2026-10-28)
+
+- Each tool's title is also in its `annotations` (`annotations.title`), where the Claude Connectors Directory reads it.
+
 ## 0.4.2 (2026-10-28)
 
 - After an edit, `get_report` returns `changes` (each passage added, changed or removed, with the text before and after) instead of `edits` (SDK 0.6.3).

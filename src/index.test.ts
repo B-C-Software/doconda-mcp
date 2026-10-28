@@ -67,11 +67,12 @@ test("lists the 8 tools, each with a description and an object input schema; a l
   assert.equal("path" in (await uploadOf(local)), true)
 })
 
-test("every tool has a title and annotations: readers are read-only, writers say they are not destructive", async (t) => {
+test("every tool has a title, also in its annotations, and annotations: readers are read-only, writers say they are not destructive", async (t) => {
   const { tools } = await (await connect(t, api(unreachable).fetch)).listTools()
   assert.deepEqual(Object.keys(TOOL_ANNOTATIONS), TOOLS)
   for (const tool of tools) {
     assert.ok((tool.title ?? "").length > 3, tool.name)
+    assert.equal(tool.annotations?.title, tool.title, tool.name)
     const reader = READERS.includes(tool.name)
     assert.equal(tool.annotations?.readOnlyHint, reader, tool.name)
     assert.equal(tool.annotations?.destructiveHint, reader ? undefined : false, tool.name)

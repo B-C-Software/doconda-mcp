@@ -23,17 +23,15 @@ export const TOOL_ANNOTATIONS: Record<string, { title: string; annotations: Tool
   read_artifact_data: { title: "Read artifact data", annotations: READ },
 }
 
-export const SERVER_INFO = { name: "doconda", title: "Doconda", version: "0.4.2" }
+export const SERVER_INFO = { name: "doconda", title: "Doconda", version: "0.4.3" }
 
 // ===== Public API =====
 
 export function listTools(doconda: Doconda, options: ToolOptions = {}) {
-  return doconda.tools(options).map(({ name, description, inputSchema }) => ({
-    name,
-    description,
-    inputSchema,
-    ...TOOL_ANNOTATIONS[name],
-  }))
+  return doconda.tools(options).map(({ name, description, inputSchema }) => {
+    const { title, annotations } = TOOL_ANNOTATIONS[name]
+    return { name, title, description, inputSchema, annotations: { title, ...annotations } }
+  })
 }
 
 export function createServer(doconda: Doconda, options: ToolOptions = {}): Server {
