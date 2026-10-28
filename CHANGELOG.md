@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 (2026-10-28)
+
+- The `edit_document` and `review_document` descriptions say what the results contain; the edit description no longer promises a link to the report (SDK 0.7.1).
+
 ## 0.4.3 (2026-10-28)
 
 - Each tool's title is also in its `annotations` (`annotations.title`), where the Claude Connectors Directory reads it.
