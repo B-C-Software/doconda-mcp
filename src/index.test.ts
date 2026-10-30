@@ -10,7 +10,7 @@ import { createServer, TOOL_ANNOTATIONS } from "./index.ts"
 const TOOLS = [
   "create_document",
   "upload_file",
-  "review_document",
+  "convert_file",
   "edit_document",
   "list_documents",
   "get_document",

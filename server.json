@@ -2,14 +2,14 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.doconda/mcp",
   "title": "Doconda",
-  "description": "Create, review and edit Word, PowerPoint, Excel and PDF documents from any AI agent.",
+  "description": "Convert, create and edit Word, PowerPoint, Excel and PDF documents from any AI agent.",
   "websiteUrl": "https://doconda.com",
-  "version": "0.4.5",
+  "version": "0.5.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@doconda/mcp",
-      "version": "0.4.5",
+      "version": "0.5.0",
       "transport": {
         "type": "stdio"
       },

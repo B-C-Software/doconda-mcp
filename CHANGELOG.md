@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 (2026-10-30)
+
+- New tool `convert_file`: any file into another format with no AI (e.g. a PDF to Markdown, Markdown to Word), with OCR for scans. The first 1,000 conversions a month are free, then €0.01 each.
+- **Breaking**: the `review_document` tool is gone: the API no longer reviews your files (SDK 0.8.0).
+- `get_report` returns only `changes` (what an edit changed); results no longer have `problems` or `style_not_applied`.
+
 ## 0.4.5 (2026-10-28)
 
 - No code changes: the first version published through npm trusted publishing (GitHub Actions OIDC) instead of a token (SDK 0.7.2).

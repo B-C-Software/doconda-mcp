@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/B-C-Software/doconda-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/B-C-Software/doconda-mcp/actions/workflows/ci.yml)
 
-MCP server for [Doconda](https://doconda.com): give your AI agent tools to create, review and edit **Word, PowerPoint,
+MCP server for [Doconda](https://doconda.com): give your AI agent tools to convert, create and edit **Word, PowerPoint,
 Excel and PDF** documents. Editable files, reviewed before delivery, with a PDF and a preview of each page.
 
 ## Remote server (for your app's agent)
@@ -58,7 +58,7 @@ For other MCP clients, such as Claude Desktop:
 
 ## Tools
 
-`create_document`, `upload_file`, `review_document`, `edit_document`, `list_documents`, `get_document`, `get_report`,
+`create_document`, `upload_file`, `convert_file`, `edit_document`, `list_documents`, `get_document`, `get_report`,
 `read_artifact_data`.
 
 Docs: https://docs.doconda.com/en/agents/mcp · Examples: https://github.com/B-C-Software/doconda-examples · Get an API key: https://doconda.com

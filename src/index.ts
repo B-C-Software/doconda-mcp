@@ -15,7 +15,7 @@ const WRITE: ToolAnnotations = {
 export const TOOL_ANNOTATIONS: Record<string, { title: string; annotations: ToolAnnotations }> = {
   create_document: { title: "Create document", annotations: WRITE },
   upload_file: { title: "Upload file", annotations: { ...WRITE, openWorldHint: true } },
-  review_document: { title: "Review document", annotations: WRITE },
+  convert_file: { title: "Convert file", annotations: WRITE },
   edit_document: { title: "Edit document", annotations: WRITE },
   list_documents: { title: "List documents", annotations: READ },
   get_document: { title: "Get document", annotations: READ },
@@ -23,7 +23,7 @@ export const TOOL_ANNOTATIONS: Record<string, { title: string; annotations: Tool
   read_artifact_data: { title: "Read artifact data", annotations: READ },
 }
 
-export const SERVER_INFO = { name: "doconda", title: "Doconda", version: "0.4.5" }
+export const SERVER_INFO = { name: "doconda", title: "Doconda", version: "0.5.0" }
 
 // ===== Public API =====
 
@@ -39,7 +39,7 @@ export function createServer(doconda: Doconda, options: ToolOptions = {}): Serve
   const server = new Server(SERVER_INFO, {
     capabilities: { tools: {} },
     instructions:
-      "Doconda creates, reviews and edits documents (Word, PDF, PowerPoint, Excel) and artifacts (web pages with shared data). Share the links it returns with the user; they expire, so call get_document for fresh ones.",
+      "Doconda converts files between formats, and creates and edits documents (Word, PDF, PowerPoint, Excel) and artifacts (web pages with shared data). Share the links it returns with the user; they expire, so call get_document for fresh ones.",
   })
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: listTools(doconda, options) }))
