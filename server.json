@@ -4,12 +4,12 @@
   "title": "Doconda",
   "description": "Convert, create and edit Word, PowerPoint, Excel and PDF documents from any AI agent.",
   "websiteUrl": "https://doconda.com",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@doconda/mcp",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "transport": {
         "type": "stdio"
       },

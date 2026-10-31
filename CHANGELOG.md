@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 (2026-10-31)
+
+- Its requests say they come from the MCP server: `User-Agent: doconda-mcp/0.5.1 doconda-js/0.8.1` (SDK 0.8.1).
+
 ## 0.5.0 (2026-10-30)
 
 - New tool `convert_file`: any file into another format with no AI (e.g. a PDF to Markdown, Markdown to Word), with OCR for scans. The first 1,000 conversions a month are free, then €0.01 each.
