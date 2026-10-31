@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.2 (2026-10-31)
+
+- **Security**: `convert_file` takes only a `file_…` or `doc_…` id (SDK 0.8.2). It used to read any other text as a path on the machine running the server. To convert a local file, upload it first with `upload_file` and its `path`.
+
 ## 0.5.1 (2026-10-31)
 
 - Its requests say they come from the MCP server: `User-Agent: doconda-mcp/0.5.1 doconda-js/0.8.1` (SDK 0.8.1).
