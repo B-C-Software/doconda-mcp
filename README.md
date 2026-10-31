@@ -61,7 +61,7 @@ For other MCP clients, such as Claude Desktop:
 `create_document`, `upload_file`, `convert_file`, `edit_document`, `list_documents`, `get_document`, `get_report`,
 `read_artifact_data`.
 
-Docs: https://docs.doconda.com/en/agents/mcp · Examples: https://github.com/B-C-Software/doconda-examples · Get an API key: https://doconda.com
+Docs: https://docs.doconda.com/agents/mcp · Examples: https://github.com/B-C-Software/doconda-examples · Get an API key: https://doconda.com
 
 ## Development
 

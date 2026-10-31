@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0 (2026-10-31)
+
+- **`create_document` and `edit_document` return after about 4 minutes** (SDK 0.9.0): a document still being made by then comes back with its `id`, `status` and a `note` telling the model to call `get_document` later. Give your client a per-call timeout of 300 s.
+- **Security**: `upload_file` with a `url` lets the Doconda API download it, which refuses private addresses; the server no longer downloads it from your machine.
+- Requests are retried only when sending them twice is safe (reads and creates), so a conversion or an upload never runs twice.
+
 ## 0.5.2 (2026-10-31)
 
 - **Security**: `convert_file` takes only a `file_…` or `doc_…` id (SDK 0.8.2). It used to read any other text as a path on the machine running the server. To convert a local file, upload it first with `upload_file` and its `path`.
